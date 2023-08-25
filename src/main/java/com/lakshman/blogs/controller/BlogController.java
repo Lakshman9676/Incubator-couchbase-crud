@@ -24,7 +24,7 @@ public class BlogController {
     
     @RequestMapping("/")
     public String index() {
-        return "Welcome to the CRUD application!!";
+        return "Welcome to the CouchBase CRUD application!!";
     }
     
     @PostMapping("/blogs")
@@ -40,11 +40,6 @@ public class BlogController {
             return Optional.empty();
     }
 
-    @GetMapping("/blogs/getcount")
-    public long countTotalBlogs() {
-        return blogRepository.count();
-    }
-    
     @GetMapping("/blogs/author/{author}")
     public Blogs getBlogByAuthorName(@PathVariable String author) {
         return blogRepository.findByAuthor(author);
