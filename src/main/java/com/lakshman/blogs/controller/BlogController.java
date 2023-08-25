@@ -39,8 +39,8 @@ public class BlogController {
         } else
             return Optional.empty();
     }
-    
-    @GetMapping("/blogs/getcount")
+
+    @GetMapping("/blogs/count")
     public long countTotalBlogs() {
         return blogRepository.count();
     }
